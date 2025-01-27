@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="تعليم لعبة اونو مع الزوبير والخوثير والنذير">
+    <meta name="keywords" content="تعليم لعبة اونو مع الزوبير والخوثير والنذير">
+    <meta name="google-site-verification" content="BP4FFEvEX83WVp6qkOgRoMsgwrufp9bizkY8qBIFI5k" />
+    <title>لعبة اونو مع الزوبير والخوثير والنذير</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-image: url('images/472922839_1271370897478849_1763613015558003863_n.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #f8f9fa;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            margin: 20px auto;
+            max-width: 90%;
+        }
+
+        header img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .navbar a {
+            color: #8a2be2; /* لون بنفسجي */
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 0 5px;
+            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .navbar a:hover {
+            background-color: rgba(138, 43, 226, 0.2); /* لون بنفسجي شفاف */
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(138, 43, 226, 0.5); /* لون بنفسجي شفاف */
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            top: 100%;
+            color: #fff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 0; /* إزالة التدوير */
+            width: 320px; /* جعل العرض 200px */
+            height: 200px; /* جعل الارتفاع 200px */
+        }
+
+        #goalsDropdown {
+            left: 0;
+        }
+
+        #faqDropdown {
+            right: 0;
+        }
+
+        .category-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        .category-item {
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid #f1c40f;
+            border-radius: 15px;
+            padding: 5px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 220px;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .category-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(241, 196, 15, 0.5);
+        }
+
+        .category-item button {
+            background-color: #f1c40f;
+            color: #000;
+            padding: 15px 30px;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .category-item button:hover {
+            background-color: #d4ac0d;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #f1c40f;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            border-top: 2px solid #f1c40f;
+        }
+
+        .latest-content {
+            background: rgba(0, 0, 0, 0.7);
+            color: #f8f9fa;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            max-width: 90%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .latest-content p {
+            margin: 10px 0;
+        }
+
+        .latest-content audio {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 20px;
+            }
+
+            .navbar a {
+                font-size: 1rem;
+                padding: 8px 10px;
+            }
+
+            .category-item {
+                width: 180px;
+                height: 60px;
+            }
+
+            .category-item button {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+
+            .latest-content {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a onclick="toggleDropdown('goalsDropdown')" style="color: #8a2be2;">شكون حنا</a>
+        <a onclick="toggleDropdown('faqDropdown')" style="color: #8a2be2;">كاش سؤال منا منهيه</a>
+        <div id="goalsDropdown" class="dropdown-content">
+            <p> موقع يهتم بتعليم مهارات حول لعبة اونو من طرف الزبير والخوثير والنذير، وزفطلين بريق نطح وابببب، هيا قلع شريكي</p>
+        </div>
+        <div id="faqDropdown" class="dropdown-content">
+            <p>تقدرو تسقسيو هنا، اذا حبيتو: </p>
+               <div class="faq-links">
+                   <a href="https://www.facebook.com/profile.php?id=61572215181523" target="_blank">رابط الفيسبوك</a>
+                   <a href="https://www.instagram.com/manbarsheihkabdalhamidboutaaa/" target="_blank">رابط الانستغرام</a>
+            </div>
+        </div>
+
+        </div>
+    </nav>
+
+    <header>
+        <img src="https://raw.githubusercontent.com/rahmounrbh/uno/refs/heads/main/IMG_20250112_093515.png" alt="اونو يا بونو">
+    </header>
+
+    <div class="category-container">
+        <div class="category-item">
+            <button onclick="redirectTo('fatwa.html')" style="background-color: green;">تقرعيج</button>
+        </div>
+        <div class="category-item">
+            <button onclick="redirectTo('lessons.html')" style="background-color: red;">مهارات</button>
+        </div>
+        <div class="category-item">
+            <button onclick="redirectTo('friday-sermons.html')" style="background-color: blue;">لعب</button>
+        </div>
+        <div class="category-item">
+            <button onclick="redirectTo('audios.html')" style="background-color: yellow;">تحديات منا منهيه</button>
+        </div>
+        <div class="category-item">
+            <button onclick="redirectTo('videos.html')" style="background-color: black; color: white;">توصيات قبل الممات</button>
+        </div>
+       
+    </div>
+
+    <div id="faq" class="latest-content">
+        <h2>كاش جديد</h2>
+        مكانش مالوروزمون
+
+    <footer>
+        <p>&copy; 2025 لعبة اونو مع الزوبير والخوثير والناذير. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script>
+        function redirectTo(url) {
+            window.location.href = url;
+        }
+
+        function toggleDropdown(dropdownId) {
+            var dropdown = document.getElementById(dropdownId);
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.navbar a')) {
+                var dropdowns = document.getElementsByClassName('dropdown-content');
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.style.display === 'block') {
+                        openDropdown.style.display = 'none';
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
