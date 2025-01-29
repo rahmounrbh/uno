@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لعبة UNO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #282c34;
+            color: white;
+        }
+        #gameContainer {
+            margin-top: 50px;
+        }
+        .card {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px;
+            background-color: #fff;
+            color: #000;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100px;
+            height: 150px;
+            text-align: center;
+            line-height: 150px;
+            font-size: 24px;
+        }
+        .deck {
+            background-color: #ddd;
+            color: #000;
+        }
+        .player-hand {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .player-hand .card {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>لعبة UNO</h1>
+    <div id="gameContainer">
+        <div id="deck" class="card deck">Deck</div>
+        <div id="discardPile" class="card">Discard Pile</div>
+        <div id="playerHand" class="player-hand"></div>
+    </div>
+    <script src="uno.js"></script>
+</body>
+</html>
