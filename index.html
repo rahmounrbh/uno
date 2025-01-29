@@ -182,38 +182,6 @@
                 padding: 15px;
             }
         }
-
-        /* Styles for the UNO game */
-        #gameContainer {
-            margin-top: 50px;
-            text-align: center;
-        }
-        .card {
-            display: inline-block;
-            margin: 5px;
-            padding: 10px;
-            background-color: #fff;
-            color: #000;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100px;
-            height: 150px;
-            text-align: center;
-            line-height: 150px;
-            font-size: 24px;
-        }
-        .deck {
-            background-color: #ddd;
-            color: #000;
-        }
-        .player-hand {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .player-hand .card {
-            margin: 5px;
-        }
     </style>
 </head>
 <body>
@@ -243,7 +211,7 @@
             <button onclick="redirectTo('friday-sermons.html')" style="background-color: blue;">تعلبو في جماعة</button>
         </div>
         <div class="category-item">
-            <button onclick="redirectTo('audios.html')" style="background-color: yellow;">تلعب كونطر الحاسوب</button>
+            <button onclick="redirectTo('uno_game.html')" style="background-color: yellow;">تلعب كونطر الحاسوب</button>
         </div>
         <div class="category-item">
             <button onclick="redirectTo('videos.html')" style="background-color: black; color: white;">توصيات قبل الممات</button>
@@ -253,13 +221,6 @@
     <div id="faq" class="latest-content">
         <h2>كاش جديد</h2>
         مكانش مالوروزمون
-    </div>
-
-    <div id="gameContainer">
-        <h2>لعبة UNO</h2>
-        <div id="deck" class="card deck">Deck</div>
-        <div id="discardPile" class="card">Discard Pile</div>
-        <div id="playerHand" class="player-hand"></div>
     </div>
 
     <footer>
@@ -288,6 +249,5 @@
             }
         }
     </script>
-    <script src="uno.js"></script>
 </body>
 </html>
