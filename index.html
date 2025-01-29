@@ -196,10 +196,23 @@
             color: #000;
             border-radius: 5px;
             cursor: pointer;
+            width: 100px;
+            height: 150px;
+            text-align: center;
+            line-height: 150px;
+            font-size: 24px;
         }
         .deck {
             background-color: #ddd;
             color: #000;
+        }
+        .player-hand {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .player-hand .card {
+            margin: 5px;
         }
     </style>
 </head>
@@ -246,7 +259,7 @@
         <h2>لعبة UNO</h2>
         <div id="deck" class="card deck">Deck</div>
         <div id="discardPile" class="card">Discard Pile</div>
-        <div id="playerHand"></div>
+        <div id="playerHand" class="player-hand"></div>
     </div>
 
     <footer>
