@@ -182,6 +182,25 @@
                 padding: 15px;
             }
         }
+
+        /* Styles for the UNO game */
+        #gameContainer {
+            margin-top: 50px;
+            text-align: center;
+        }
+        .card {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px;
+            background-color: #fff;
+            color: #000;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .deck {
+            background-color: #ddd;
+            color: #000;
+        }
     </style>
 </head>
 <body>
@@ -195,7 +214,7 @@
             <p>تقدرو تسقسيو هنا، اذا حبيتو: </p>
                <div class="faq-links">
                    <a href="https://www.facebook.com/profile.php?id=61572215181523" target="_blank">رابط الفيسبوك</a>
-                   
+
             </div>
         </div>
 
@@ -207,7 +226,6 @@
     </header>
 
     <div class="category-container">
-        
         <div class="category-item">
             <button onclick="redirectTo('friday-sermons.html')" style="background-color: blue;">تعلبو في جماعة</button>
         </div>
@@ -217,12 +235,19 @@
         <div class="category-item">
             <button onclick="redirectTo('videos.html')" style="background-color: black; color: white;">توصيات قبل الممات</button>
         </div>
-       
     </div>
 
     <div id="faq" class="latest-content">
         <h2>كاش جديد</h2>
         مكانش مالوروزمون
+    </div>
+
+    <div id="gameContainer">
+        <h2>لعبة UNO</h2>
+        <div id="deck" class="card deck">Deck</div>
+        <div id="discardPile" class="card">Discard Pile</div>
+        <div id="playerHand"></div>
+    </div>
 
     <footer>
         <p>&copy; 2025 لعبة اونو اكسترا اوردينار. جميع الحقوق محفوظة.</p>
@@ -250,5 +275,6 @@
             }
         }
     </script>
+    <script src="uno.js"></script>
 </body>
 </html>
