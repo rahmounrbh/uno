@@ -43,6 +43,12 @@
         .player-info {
             margin: 20px 0;
         }
+        .uno-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -56,6 +62,7 @@
         <div id="player1Info" class="player-info">لاعب 1: <span id="player1CardsCount">0</span> بطاقات</div>
         <div id="player2Info" class="player-info">لاعب 2: <span id="player2CardsCount">0</span> بطاقات</div>
         <div id="player3Info" class="player-info">لاعب 3: <span id="player3CardsCount">0</span> بطاقات</div>
+        <button id="unoButton" class="uno-button" onclick="callUno()">UNO</button>
     </div>
     <script src="uno.js"></script>
 </body>
