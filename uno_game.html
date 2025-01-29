@@ -40,14 +40,22 @@
         .player-hand .card {
             margin: 5px;
         }
+        .player-info {
+            margin: 20px 0;
+        }
     </style>
 </head>
 <body>
     <h1>لعبة UNO</h1>
     <div id="gameContainer">
-        <div id="deck" class="card deck">Deck</div>
-        <div id="discardPile" class="card">Discard Pile</div>
-        <div id="playerHand" class="player-hand"></div>
+        <div id="deck" class="card deck">كومة الأوراق</div>
+        <div id="discardPile" class="card">كومة الرمي</div>
+        <div id="player1Hand" class="player-hand"></div>
+        <div id="player2Hand" class="player-hand"></div>
+        <div id="player3Hand" class="player-hand"></div>
+        <div id="player1Info" class="player-info">لاعب 1: <span id="player1CardsCount">0</span> بطاقات</div>
+        <div id="player2Info" class="player-info">لاعب 2: <span id="player2CardsCount">0</span> بطاقات</div>
+        <div id="player3Info" class="player-info">لاعب 3: <span id="player3CardsCount">0</span> بطاقات</div>
     </div>
     <script src="uno.js"></script>
 </body>
