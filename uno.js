@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const player1CardsCount = document.getElementById('player1CardsCount');
     const player2CardsCount = document.getElementById('player2CardsCount');
     const player3CardsCount = document.getElementById('player3CardsCount');
+    const unoButton = document.getElementById('unoButton');
 
     const colors = ['أحمر', 'أزرق', 'أخضر', 'أصفر'];
     const values = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'تخطي', 'عكس', 'سحب اثنين', 'بري', 'بري سحب أربعة'];
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentCard = null;
     let currentColor = null;
     let currentPlayer = 1;
+    let unoCalled = false;
 
     // Create the deck
     function createDeck() {
@@ -123,12 +125,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Move to the next player
     function nextPlayer() {
         currentPlayer = (currentPlayer % 3) + 1;
+        unoCalled = false;
+        unoButton.disabled = true;
     }
 
-    // Initialize the game
-    function initializeGame() {
-        createDeck();
-        dealCards();
+    // Call UNO
+    function callUno() {
+        if (currentPlayer === 1 && player1Cards.length === 1 && !unoCalled) {
+            alert('UNO!');
+            unoCalled = true;
+        }
     }
 
     // Event listener for drawing a card
@@ -141,7 +147,14 @@ document.addEventListener('DOMContentLoaded', () => {
             player3Cards.push(drawCard());
         }
         updatePlayerHands();
+        nextPlayer();
     });
+
+    // Initialize the game
+    function initializeGame() {
+        createDeck();
+        dealCards();
+    }
 
     initializeGame();
 });
