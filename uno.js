@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let gameDeck = [];
     let playerCards = [];
     let currentCard = null;
+    let currentColor = null;
 
     // Create the deck
     function createDeck() {
@@ -40,12 +41,20 @@ document.addEventListener('DOMContentLoaded', () => {
             playerCards.push(drawCard());
         }
         currentCard = drawCard();
+        currentColor = currentCard.color;
         updateDiscardPile();
         updatePlayerHand();
     }
 
     // Draw a card from the deck
     function drawCard() {
+        if (gameDeck.length === 0) {
+            gameDeck = [...discardPile.children].map(card => ({
+                color: card.style.backgroundColor,
+                value: card.innerHTML
+            }));
+            shuffleDeck();
+        }
         return gameDeck.pop();
     }
 
@@ -70,9 +79,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Play a card from the player's hand
     function playCard(index) {
         const card = playerCards[index];
-        if (card.color === currentCard.color || card.value === currentCard.value || card.value === 'Wild' || card.value === 'Wild Draw Four') {
+        if (card.color === currentColor || card.value === currentCard.value || card.value === 'Wild' || card.value === 'Wild Draw Four') {
             playerCards.splice(index, 1);
             currentCard = card;
+            if (card.value === 'Wild' || card.value === 'Wild Draw Four') {
+                currentColor = prompt('Choose a color: red, blue, green, yellow');
+            } else {
+                currentColor = card.color;
+            }
             updateDiscardPile();
             updatePlayerHand();
         }
